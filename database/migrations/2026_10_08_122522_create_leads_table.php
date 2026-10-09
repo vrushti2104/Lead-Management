@@ -23,8 +23,8 @@ return new class extends Migration
             $table->foreignId('assigned_to')->nullable()->constrained('users')->onDelete('set null');
             $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
             $table->string('notes')->nullable();
-
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
